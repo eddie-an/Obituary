@@ -1,6 +1,6 @@
 # The Last Show
 
-###### Group Project
+###### Group Project (incomplete; lambda function isn't working)
 
 ###### Created by Edward An and Jacob Lever
 
