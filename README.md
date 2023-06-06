@@ -1,6 +1,6 @@
 # The Last Show
 
-###### Group Project (incomplete; lambda function isn't working)
+###### Group Project (incomplete; OpenAI Completions API is not working properly.)
 
 ###### Created by Edward An and Jacob Lever
 
