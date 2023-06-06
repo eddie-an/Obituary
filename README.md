@@ -1,4 +1,4 @@
-# The Last Show
+# Obituary
 
 ###### Group Project
 
@@ -8,7 +8,14 @@
 
 This is a full stack application created with React and AWS that generates obituaries for people (fictional or otherwise). [ChatGPT](https://openai.com/blog/chatgpt) is used to generate an obituary, [Amazon Polly](https://aws.amazon.com/polly/) to turn the obituary into speech, and [Cloudinary](https://cloudinary.com/) to store the speech and a picture of the deceased (may they rest in peace).
 
-## <br>
+# How to run the program
+
+- Clone the repo using `git clone "https://github.com/eddie-an/Obituary"`
+- Change to root directory directory of the repo using `cd` commands
+- Run `npm install` to install all the necessary packages
+- Run `npm start` to run the program
+
+###### This website was not published because it allows any user to upload any images without creating an account. I did not want the web page to be littered with explicit images. So, no website link is provided.
 
 ## Architecture Overview
 
@@ -17,13 +24,6 @@ This is a full stack application created with React and AWS that generates obitu
   <img src="https://res.cloudinary.com/mkf/image/upload/v1680411648/last-show_dvjjez.svg" alt="obituary-architecture" width="800"/>
 </p>
 <br/>
-
-# How to run the program
-
-- Clone the repo using `git clone "https://github.com/eddie-an/Obituary"`
-- Change to root directory directory of the repo using `cd` commands
-- Run `npm install` to install all the necessary packages
-- Run `npm start` to run the program
 
 ## :page_with_curl: Notes
 
