@@ -19,8 +19,8 @@ provider "aws" {
 
 # locals block to declare constants
 locals {
-  function_create_obituary = "create-obituary"
-  function_get_obituaries  = "get-obituaries"
+  function_create_obituary = "create-obituary-30142179"
+  function_get_obituaries  = "get-obituaries-30142179"
   handler_name             = "main.lambda_handler"
   artifact_name            = "artifact.zip"
 }
@@ -28,7 +28,7 @@ locals {
 
 # create a role for the Lambda function to assume
 resource "aws_iam_role" "lambda" {
-  name               = "iam-for-obituary-lambda"
+  name               = "iam-for-the-last-show-lambda"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -48,7 +48,7 @@ EOF
 
 # policy for logging lamdbda function on cloudwatch
 resource "aws_iam_policy" "log" {
-  name        = "obituary-lambda-logging"
+  name        = "the-last-show-lambda-logging"
   description = "IAM policy for logging from a lambda"
 
   policy = <<EOF
@@ -73,7 +73,7 @@ EOF
 
 # policy for reading and writing from/to dynamodb with lambda function
 resource "aws_iam_policy" "dynamodb" {
-  name        = "obituary-dynamodb"
+  name        = "the-last-show-dynamodb"
   description = "IAM policy for interacting with dynamodb from a lambda"
 
   policy = <<EOF
@@ -87,7 +87,7 @@ resource "aws_iam_policy" "dynamodb" {
         "dynamodb:Scan"
       ],
       "Resource": [
-        "${aws_dynamodb_table.obituaryDB.arn}"
+        "${aws_dynamodb_table.obituary-30147405.arn}"
         ],
       "Effect": "Allow"
     }
@@ -101,7 +101,7 @@ EOF
  * for "Resource", the long string of numbers is the AWS Account ID (must be changed for whoever wants to configure the backend)
  */
 resource "aws_iam_policy" "parameter_store" {
-  name        = "obituary-parameter-store"
+  name        = "the-last-show-parameter-store"
   description = "IAM policy for ssm key fetch and decryption from a lambda"
 
   policy = <<EOF
@@ -114,7 +114,7 @@ resource "aws_iam_policy" "parameter_store" {
         "kms:Decrypt"
       ],
       "Resource": [
-        "arn:aws:ssm:ca-central-1:228775797536:parameter/obituary-edward-and-jacob/",
+        "arn:aws:ssm:ca-central-1:228775797536:parameter/the-last-show-edward-and-jacob/",
         "arn:aws:kms:ca-central-1:228775797536:key/c531aee2-2247-4d3c-bd1a-1330532571cc"
         ],
       "Effect": "Allow"
@@ -126,7 +126,7 @@ EOF
 
 # policy for using polly with lambda function
 resource "aws_iam_policy" "polly" {
-  name        = "obituary-polly"
+  name        = "the-last-show-polly"
   description = "IAM policy for polly text-to-speech from a lambda"
 
   policy = <<EOF
@@ -169,8 +169,8 @@ resource "aws_iam_role_policy_attachment" "lambda_polly" {
 }
 
 # dynamodb table
-resource "aws_dynamodb_table" "obituaryDB" {
-  name         = "obituaryDB"
+resource "aws_dynamodb_table" "obituary-30147405" {
+  name         = "obituary-30147405"
   billing_mode = "PROVISIONED"
 
   # up to 8KB read per second (eventually consistent)

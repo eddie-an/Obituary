@@ -3,7 +3,7 @@ import boto3
 from boto3.dynamodb.conditions import Key
 
 dynamodb_resource = boto3.resource("dynamodb")
-table = dynamodb_resource.Table("obituaryDB")
+table = dynamodb_resource.Table("obituary-30147405")
 
 def lambda_handler(event, context):
     try:

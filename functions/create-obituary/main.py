@@ -9,12 +9,12 @@ import os
 
 
 dynamodb_resource = boto3.resource("dynamodb")
-table = dynamodb_resource.Table("obituaryDB")
+table = dynamodb_resource.Table("obituary-30147405")
 client = boto3.client('ssm')
 
 #get ssm keys
 response = client.get_parameters_by_path(
-    Path='/obituary-edward-and-jacob/',
+    Path='/the-last-show-edward-and-jacob/',
     Recursive=True,
     WithDecryption=True,
 )
@@ -35,7 +35,7 @@ url for the image that needs to be put into DynamoDB we can use: res["secure_url
 def upload_to_cloud(filename, resource_type='image'):
     api_key = "783689415177585"
     cloud_name = "dh28kj5kr"
-    api_secret = get_keys("/obituary-edward-and-jacob/cloudinary-key")
+    api_secret = get_keys("/the-last-show-edward-and-jacob/cloudinary-key")
     eager = "e_art:zorro"
     timestamp = int(time.time())
 
@@ -88,7 +88,7 @@ The chat gpt function that gets the generated text from chat GPT API
 '''
 def get_gpt(prompt):
     url = "https://api.openai.com/v1/completions"
-    api_key = get_keys("/obituary-edward-and-jacob/gpt-key")
+    api_key = get_keys("/the-last-show-edward-and-jacob/gpt-key")
 
     headers = {
         "Content-Type" : "application/json",
@@ -148,7 +148,7 @@ def lambda_handler(event, context):
         file.write(binary_data[3])
     
     cloudImage = upload_to_cloud(imageFile)
-    prompt = f"write an obituary about a fictional character named {name} who was born on {birthDate} and died on {deathDate}."
+    prompt = f"write an obituary about a fictional character named {name} who was born on {birthDate} and died on {deathDate}"
     resGPT = get_gpt(prompt)
     
     speechFile = polly(resGPT)
@@ -182,3 +182,4 @@ def lambda_handler(event, context):
                     "message":str(exp)
             })
         }
+        

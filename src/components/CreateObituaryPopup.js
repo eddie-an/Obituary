@@ -29,7 +29,7 @@ function CreateObituaryPopup( {setPopupState, setObituaryCollection, obituaryCol
         const submitTime = Date.now();
         dataToSubmit.append("submit time", submitTime);
         const promise = await fetch(
-            "https://gut277fanzb5xcpizgkvn2qdqe0dajqm.lambda-url.ca-central-1.on.aws/", // Lambda Function URL (needs to be hard coded)
+            "https://gmezgvtvdwsdv54jmp4gyfaetq0qlszq.lambda-url.ca-central-1.on.aws/", // Lambda Function URL (needs to be hard coded)
             {
                 method: "POST",
                 body: dataToSubmit,
