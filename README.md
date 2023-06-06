@@ -1,6 +1,8 @@
 # The Last Show
 
-###### Group Project (incomplete; OpenAI Completions API is not working properly.)
+###### Group Project
+
+###### Program currently does not run because OpenAI free trial is expired.
 
 ###### Created by Edward An and Jacob Lever
 
