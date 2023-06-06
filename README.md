@@ -2,7 +2,7 @@
 
 ###### Group Project
 
-###### Program currently does not run because OpenAI free trial is expired.
+###### Note: Program currently does not run properly because OpenAI free trial is expired
 
 ###### Created by Edward An and Jacob Lever
 
