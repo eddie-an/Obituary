@@ -2,12 +2,11 @@
 
 ###### Group Project
 
-###### Note: Program currently does not run properly because OpenAI free trial is expired
-
 ###### Created by Edward An and Jacob Lever
 
 This is a full stack application created with React and AWS that generates obituaries for people (fictional or otherwise). [ChatGPT](https://openai.com/blog/chatgpt) is used to generate an obituary, [Amazon Polly](https://aws.amazon.com/polly/) to turn the obituary into speech, and [Cloudinary](https://cloudinary.com/) to store the speech and a picture of the deceased (may they rest in peace).
 
+A demonstration of the program is shown in this [video](https://youtu.be/sPxyw4JUrWQ).
 # How to run the program
 
 - Clone the repo using `git clone "https://github.com/eddie-an/Obituary"`
