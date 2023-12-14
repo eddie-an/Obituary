@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import NoContent from "./components/NoContent";
 import Content from "./components/Content";
 import CreateObituaryPopup from "./components/CreateObituaryPopup";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [ obituaryCollection, setObituaryCollection ] = useState([]); 
@@ -43,7 +43,9 @@ function App() {
       }
     }
     
-    window.onload = loadObituary; // loads obituary when the website is refreshed
+    useEffect(()=> {
+      loadObituary();
+    }, []);
 
 
   return (
