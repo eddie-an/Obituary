@@ -11,7 +11,7 @@ function App() {
   
   const loadObituary = async () => {
     const res = await fetch(
-        "https://cmq7ovz6hqxll7srfgxffz45um0apfik.lambda-url.ca-central-1.on.aws/", // Lambda Function URL (needs to be hard coded)
+        "https://54jrxpxn6f3hmnb22u2zzd2ydq0kuyzm.lambda-url.ca-central-1.on.aws/", // Lambda Function URL (needs to be hard coded)
         {
           method: "GET",
           headers: {
